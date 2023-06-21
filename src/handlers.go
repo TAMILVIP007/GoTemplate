@@ -1,13 +1,12 @@
 package src
 
 import (
-	"github.com/PaulSonOfLars/gotgbot/v2"
-	"github.com/PaulSonOfLars/gotgbot/v2/ext"
+	"github.com/amarnathcjd/gogram/telegram"
 )
 
-func PmStart(b *gotgbot.Bot, ctx *ext.Context) error {
-	if ctx.EffectiveChat.Type == "private" {
-		ctx.EffectiveMessage.Reply(b, "Hello there! I'm a sticker bot made by @mybotsrealm.", nil)
+func PmStart(m *telegram.NewMessage) error {
+	if _, err := m.Reply("Hello there! I'm a bot made by @mybotsrealm"); err != nil {
+		return err
 	}
 	return nil
 }

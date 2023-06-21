@@ -4,6 +4,6 @@ type Envs struct {
 	DbUrl   string
 	Token   string
 	Devs    []string
-	Webhook string
-	Port    string
+	AppId   int32
+	AppHash string
 }

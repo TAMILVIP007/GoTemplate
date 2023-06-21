@@ -19,12 +19,11 @@ func loadenv() *Envs {
 	log.Println("Loaded environment variables from .env file")
 	env := Envs{
 		Token:   os.Getenv("TOKEN"),
+		AppId :  Converttoin32(os.Getenv("APP_ID")),
+		AppHash: os.Getenv("APP_HASH"),
 		DbUrl:   os.Getenv("DATABASE_URL"),
 		Devs:    strings.Split(os.Getenv("DEVS"), " "),
-		Webhook: os.Getenv("WEBHOOK"),
-		Port:    os.Getenv("PORT"),
 	}
-
 	return &env
 }
 
